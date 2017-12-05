@@ -4,48 +4,56 @@
 }*/
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-  text-align: center;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    text-align: center;
 }
 
 .App-title {
-  font-size: 3.0em;
-  color: #33cccc;
-  font-family: Arial;
+    font-size: 3.0em;
+    color: #33cccc;
+    font-family: Arial;
 }
 
 .App-intro {
-  font-size: large;
-  font-style: normal;
-  font-family: Courier;
+    font-size: large;
+    font-style: normal;
+    font-family: Courier;
 }
 
 .MainButtons {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .Dropdowns {
-  padding: 25px;
-  text-align: center;
+    padding: 25px;
+    text-align: center;
 }
 
-.divider{
-    width:10px;
-    height:auto;
-    display:inline-block;
+.divider {
+    width: 10px;
+    height: auto;
+    display: inline-block;
 }
 
 .panel {
-    width:800px;
-    height:400px;
-    text-align: center;
+    width: 800px;
+    height: 400px;
     position: absolute;
+    text-align: left;
     top: 64%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
 
+.modal-container {
+    position: relative;
+}
+
+.modal-container .modal,
+.modal-container .modal-backdrop {
+    position: absolute;
+}
