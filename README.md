@@ -1,3 +1,16 @@
+## How to setup this project
+
+1. Clone or download the project
+
+2. Go to project root folder and type `npm install`
+
+3. Type `npm start` to fire up the application
+
+4. The Application would be opened on your web browser automatically, if not go to http://localhost:3000/
+
+<hr />
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
