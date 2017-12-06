@@ -8,31 +8,34 @@ class Content extends Component {
         super(props);
         this.state = {
             popupShow: false,
-            code: "My feature description"
+            line: '',
         };
-        this.code = "";
-    }
-
-    onCodeChange(line) {
-        this.setState({
-            code: line
-        });
+        this.code = '';
     }
 
     render() {
         let popupClose = () => this.setState({ popupShow: false });
+        let onCodeChange = (event) => {
+            console.log(event.target.value);
+            this.setState({ line: event.target.value });
+        };
+        let addFeature = () => {
+            popupClose();
+            var previousSteps = document.getElementById('myPanel').innerHTML;
+            document.getElementById('myPanel').innerHTML = previousSteps + '<p>Feature: ' + this.state.line + "</p>";
+        };
+
         return (
             <div>
                 <div className="MainButtons">
                     <Button bsStyle="primary" onClick={() => this.setState({ popupShow: true })}> Create Test Suite </Button>
                     <div className="divider" />
-                    <Popup show={this.state.popupShow} onHide={popupClose} />
                     <Button bsStyle='primary' disabled>Create Test Case</Button>
+                    <Popup show={this.state.popupShow} onHide={popupClose} onChange={onCodeChange} onSubmit={addFeature} line={this.state.line} />
                 </div>
 
                 <div className="Dropdowns">
                     <Form inline>
-
                         <FormGroup controlId="formControlScenario">
                             <FormControl componentClass="select">
                                 <option value="given">Given</option>
@@ -86,7 +89,10 @@ class Content extends Component {
 
 
                     <Panel header=".feature">
-                        <p>{this.code}</p>
+                        <div id="myPanel">
+
+                        </div>
+
                     </Panel>
 
 

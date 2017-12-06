@@ -7,10 +7,11 @@ import { Button, Form, FormControl, Modal } from 'react-bootstrap';
 class Popup extends Component {
     constructor(props) {
         super();
-        this.state = {
-            line: ''
-        }
+        // this.state = {
+        //     line: ''
+        // }
     }
+
     render() {
         return (
             <div>
@@ -20,34 +21,16 @@ class Popup extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <p>Test Suit Description</p>
-                        <Form onSubmit={this.handleSubmit.bind(this)}>
-                            <FormControl type="text" id="description" name="desc" placeholder="Enter text" value={this.state.line} onChange={this.handleLineChange.bind(this)} />
-                            <br />
-                            <center>
-                                <Button bsStyle="primary" type="submit">Create</Button>
-                            </center>
-                        </Form>
+                        <FormControl type="text" id="description" name="desc" placeholder="Enter text" value={this.props.line} onChange={this.props.onChange} />
+                        <br />
+                        <center>
+                            <Button bsStyle="primary" onClick={this.props.onSubmit}>Create</Button>
+                        </center>
                     </Modal.Body>
                 </Modal>
-                <Content >
-                    <p> No shit</p>
-                </Content>
             </div>
         );
     }
-
-    handleLineChange(event) {
-        console.log(event.target.value);
-        this.setState({
-            line: event.target.value
-        })
-    }
-
-    handleSubmit() {
-        console.log("Now hiting submit");
-        console.log(this.state);
-    }
-
 }
 
 export default Popup;
